@@ -1,4 +1,4 @@
-#range(start, end, step)
+# range(start, end, step)
 
 # sonlar = list(range(1, 10))
 # print(sonlar)
@@ -25,7 +25,7 @@
 # print('WIUT BIS')
 # print('=' * 10)
 
-#2nd option
+# 2nd option
 
 # print("==========\n{}\n==========".format("WIUT BIS"))
 
@@ -80,15 +80,14 @@
 # print(type(year))
 # print(type(module_name))
 
-#------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------
 
 
-#2 nd month 6th class
+# 2 nd month 6th class
 
-#T heme class
+# T heme class
 # print(type('as'))
-#egzemplyar // namuna // example
-
+# egzemplyar // namuna // example
 
 
 # class User:
@@ -107,40 +106,40 @@
 # print(user2.name)
 # this is called izoh or comment // commenting
 
-#--------------------------------------------------------
+# --------------------------------------------------------
 # __init__() metodi
 
-class User:
-    def __init__(self, name, lastname, age, salary, work=None):
-        self.salary = salary
-        self.name = name
-        self.lastname = lastname
-        self.age = age
-        self.work = work
-        self.get_user_info()
-
-    def get_user_info(self):
-        print(f"Foydalanuvci ismi: {self.name}, yoshi: {self.age}")
-
-    def get_user_work(self):
-        if self.work:
-            message = f"Foydalanuvci {self.work} bo'lib ishlaydi!"
-
-        else:
-            message: "Ish joyi anketada korsatilgan"
-        print(message)
-
-    def __str__(self):
-        return f"Foydalanuvchi ismi: {self.name} {self.lastname}, yoshi: {self.age}"
-
-    def __eq__(self, other):
-        return self.salary == other.salary
-
-    def __lt__(self, other):
-        return self.age < other.age
-
-user1 = User('Abror', 'Abrorov', 45, 1000, 'konduktor')
-user2 = User('Toxir', 'Toxirov', 32, 1500)
+# class User:
+#     def __init__(self, name, lastname, age, salary, work=None):
+#         self.salary = salary
+#         self.name = name
+#         self.lastname = lastname
+#         self.age = age
+#         self.work = work
+#         self.get_user_info()
+#
+#     def get_user_info(self):
+#         print(f"Foydalanuvci ismi: {self.name}, yoshi: {self.age}")
+#
+#     def get_user_work(self):
+#         if self.work:
+#             message = f"Foydalanuvci {self.work} bo'lib ishlaydi!"
+#
+#         else:
+#             message: "Ish joyi anketada korsatilgan"
+#         print(message)
+#
+#     def __str__(self):
+#         return f"Foydalanuvchi ismi: {self.name} {self.lastname}, yoshi: {self.age}"
+#
+#     def __eq__(self, other):
+#         return self.salary == other.salary
+#
+#     def __lt__(self, other):
+#         return self.age < other.age
+#
+# user1 = User('Abror', 'Abrorov', 45, 1000, 'konduktor')
+# user2 = User('Toxir', 'Toxirov', 32, 1500)
 
 # print(User.__eq__(user1, user2))
 
@@ -162,10 +161,36 @@ user2 = User('Toxir', 'Toxirov', 32, 1500)
 # print(user1.get_user_work())
 # print(dir(user1)) // metodlarni bilb olsa boladi
 
+# ---------------------------------------------------------------------
 
+class Employee:
+    def __init__(self, name, lastname, salary_per_hour, years_of_work):
+        self.name = name
+        self.lastname = lastname
+        self.salary_per_hour = salary_per_hour
+        self.years_of_work = years_of_work
 
+    def __str__(self):
+        return self.name
 
+    def get_salary_per_day(self):
+        salary_per_day = self.salary_per_hour * 9
+        return salary_per_day
 
+    def get_salary_per_month(self):
+        salary_per_month = self.get_salary_per_day() * 20
+        return salary_per_month
+
+    def get_salary_per_year(self):
+        salary_per_year = self.get_salary_per_month() * 12
+        return salary_per_year
+
+employee1 = Employee('Abror', 'Abrorov', 5, 10)
+
+print(employee1)
+print(employee1.get_salary_per_day())
+print(employee1.get_salary_per_month())
+print(employee1.get_salary_per_year())
 
 
 
