@@ -111,7 +111,8 @@
 # __init__() metodi
 
 class User:
-    def __init__(self, name, lastname, age, work=None):
+    def __init__(self, name, lastname, age, salary, work=None):
+        self.salary = salary
         self.name = name
         self.lastname = lastname
         self.age = age
@@ -130,14 +131,29 @@ class User:
         print(message)
 
     def __str__(self):
-        return f"Foydalanuvchi ismi: {self.name} {self.lastname, yoshi: {self.age}}"
+        return f"Foydalanuvchi ismi: {self.name} {self.lastname}, yoshi: {self.age}"
 
-user1 = User('Abror', 'Abrorov', 45, 'konduktor')
-user2 = User('Toxir', 'Toxirov', 32)
-print(user1.__repr__())
-print(user2)
+    def __eq__(self, other):
+        return self.salary == other.salary
+
+    def __lt__(self, other):
+        return self.age < other.age
+
+user1 = User('Abror', 'Abrorov', 45, 1000, 'konduktor')
+user2 = User('Toxir', 'Toxirov', 32, 1500)
+
+# print(User.__eq__(user1, user2))
+
+# __eq__() - ==
+# __ne__() - !=
+# __lt__() - <
+# __le__() - <=
+# __gt__() - >
+# __ge__() - >=
 
 
+# print(user1.__repr__())
+# print(user2)
 # print(user1.name)
 # print(user2.name)
 # user1.get_user_info()
